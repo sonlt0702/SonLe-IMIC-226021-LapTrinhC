@@ -1,5 +1,5 @@
 #include <stdio.h>
-void my_funtion();
+#include "libarary.h"
 
 void main() {
 	printf("Hello World \n");
