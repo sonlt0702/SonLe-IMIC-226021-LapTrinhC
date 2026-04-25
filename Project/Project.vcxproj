@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="buoi1.c" />
     <ClCompile Include="buoi2.c" />
+    <ClCompile Include="buoi3.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
