@@ -27,6 +27,9 @@
     <ClCompile Include="buoi3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="buoi4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libarary.h">
