@@ -64,8 +64,43 @@ void buoi5_bai_5() {
 	int arr[] = { 1, 2, 3, 4, 5 };
 	int kq = arr_sum(arr, 5);
 	printf("tong cac phan tu: %d \n", kq);
-	
 }
 
+void buoi5_btvn() {
+	// bài 1
+	char str1[] = "hello world 123";
+	int len_str = length_string(str1);
+	printf("chuoi co do dai: %d \n", len_str);
+
+	// bài 2
+	char str2[] = "Hello worLd 123";
+	str_uppercase(str2);
+	printf("chuoi uppercase: %s \n", str2);
+
+	// bài 3
+	char str3[] = "Hello worLd 123";
+	char* ptr = str_findChar(str3, 'L');
+	if (ptr != 0) {
+		printf("dia chi tim dc: %p \n", ptr);
+	} else
+		printf("khong tim thay ki tu\n");
+
+	// bài 4
+	char str41[] = "Hello, your name is: ";
+	char str42[] = "Son123";
+
+	char* str4 = str_concat(str41, str42);
+	printf("%s \n", str4);
+	printf("chieu dai chuoi sau khi noi: %d \n", length_string(str4));
+
+	// bài 5
+	char str51[] = "hello world 123";
+	char str52[] = "son";
+	int isFindStr = str_findStr(str51, str52);
+	if (isFindStr == 1)
+		printf("tim thay chuoi con");
+	else
+		printf("khong tim thay chuoi con");
+}
 
 

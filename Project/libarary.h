@@ -20,6 +20,7 @@ void buoi5_bai_2();
 void buoi5_bai_3();
 void buoi5_bai_4();
 void buoi5_bai_5();
+void buoi5_btvn();
 /**
 * @brief Cộng 2 số nguyên
 * @param int: số nguyên 1
@@ -52,3 +53,33 @@ int length_string(char* str);
 *
 */
 int arr_sum(int* arr, int so_luong_phan_tu);
+/**
+* @brief viết hoa chuỗi
+* @param char*: địa chỉ bắt đầu của chuỗi
+*
+*/
+void str_uppercase(char* str);
+/**
+* @brief tìm vị trí xuất hiện đầu tiên của 1 kí tự trong chuỗi
+* @param char*: địa chỉ bắt đầu của chuỗi
+* @param char: kí tự cần tìm
+* @return địa chỉ của kí tự (trả về 0 nếu không tìm thấy)
+*
+*/
+char* str_findChar(char* str, char k);
+/**
+* @brief nối 2 chuỗi (max length 1000 kí tự)
+* @param char*: địa chỉ bắt đầu của chuỗi 1
+* @param char*: địa chỉ bắt đầu của chuỗi 2
+* @return địa chỉ của chuỗi đã nối
+*
+*/
+char* str_concat(char* str1, char* str2);
+/**
+* @brief kiểm tra chuỗi 2 có xuất hiện trong chuỗi 1 hay không
+* @param char*: địa chỉ bắt đầu của chuỗi 1
+* @param char*: địa chỉ bắt đầu của chuỗi 2
+* @return 1 nếu có, 0 nếu không có
+*
+*/
+int str_findStr(char* str1, char* str2);
