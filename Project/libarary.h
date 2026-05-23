@@ -21,6 +21,7 @@ void buoi5_bai_3();
 void buoi5_bai_4();
 void buoi5_bai_5();
 void buoi5_btvn();
+void buoi6_bai_1();
 /**
 * @brief Cộng 2 số nguyên
 * @param int: số nguyên 1
