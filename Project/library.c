@@ -100,3 +100,42 @@ int str_findStr(char* str1, char* str2)
 	}
 	return 0;
 }
+phan_so tich_phan_so(phan_so A, phan_so B)
+{
+	phan_so C;
+	C.tu_so = A.tu_so * B.tu_so;
+	C.mau_so = A.mau_so * B.mau_so;
+	return C;
+
+};
+
+int tim_max_phan_so(phan_so* arr, int n)
+{
+	phan_so psmax = *arr;
+	int vi_tri_max = 0;
+	for (int i = 1; i < n; i++)
+	{
+		float valmax = psmax.tu_so * 1.0 / psmax.mau_so;
+		float valcurrent = arr[i].tu_so * 1.0 / arr[i].mau_so;
+		if (valcurrent > valmax) {
+			psmax = arr[i];
+			vi_tri_max = i;
+		}
+	}
+	return vi_tri_max;
+}
+
+int tim_hoc_sinh_gioi_nhat(hoc_sinh* arr, int n)
+{
+	float diem_max = 0;
+	int vi_tri_max = 0;
+	for (int i = 0; i < n; i++)
+	{
+		float diem_tb = (arr[i].diem_toan + arr[i].diem_van) / 2;
+		if (diem_tb > diem_max) {
+			diem_max = diem_tb;
+			vi_tri_max = i;
+		}
+	}
+	return vi_tri_max;
+}
