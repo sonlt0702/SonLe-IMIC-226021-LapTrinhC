@@ -1,4 +1,5 @@
 #include "libarary.h"
+#include <stdio.h>
 int cong_so_nguyen(int so_nguyen_1, int so_nguyen_2) {
 	return so_nguyen_1 + so_nguyen_2;
 }
@@ -138,4 +139,41 @@ int tim_hoc_sinh_gioi_nhat(hoc_sinh* arr, int n)
 		}
 	}
 	return vi_tri_max;
+}
+
+void linked_list_init(linked_list* ll)
+{
+	ll->root_node = NULL;
+	ll->size = 0;
+}
+
+void linked_list_add_node(linked_list* ll, int val)
+{
+	node* n = malloc(sizeof(node));
+	n->value = val;
+	n->next_node = NULL;
+	if (ll->root_node == NULL)
+	{
+		ll->root_node = n;
+	}
+	else
+	{
+		node* temp = ll->root_node;
+		for (int i = 0; i < ll->size - 1; i++)
+		{
+			temp = (node*)(temp->next_node);
+		}
+		temp->next_node = n;
+	}
+	ll->size++;
+}
+
+int linked_list_get_val(linked_list* ll, int index)
+{
+	node* temp = ll->root_node;
+	for (int i = 0; i < index; i++)
+	{
+		temp = (node*)(temp->next_node);
+	}
+	return temp->value;
 }

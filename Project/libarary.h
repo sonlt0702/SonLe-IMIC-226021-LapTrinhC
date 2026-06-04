@@ -25,6 +25,7 @@ void buoi6_bai_1();
 void buoi6_bai_2();
 void buoi6_bai_3();
 void buoi6_bai_4();
+void buoi7_bai_1();
 
 /**
 * @brief Cộng 2 số nguyên
@@ -139,3 +140,42 @@ typedef struct {
 *
 */
 int tim_hoc_sinh_gioi_nhat(hoc_sinh* arr, int n);
+
+/**
+* @brief kiểu dữ liệu node
+*/
+typedef struct
+{
+	void* next_node;	// địa chỉ của node kế tiếp
+	int value;			// giá trị của node
+} node;
+
+/**
+* @brief kiểu dữ linked list
+*/
+typedef struct
+{
+	node* root_node; // địa chỉ của node đầu tiên.
+	int size;		 // số lượng node
+} linked_list;
+
+/**
+* @brief Hàm khởi tạo linked list
+* @param (linked_list*): địa chỉ của linked list
+*/
+void linked_list_init(linked_list* ll);
+
+/**
+* @brief Hàm thêm 1 node vào cuối linked list
+* @param (linked_list*): địa chỉ của linked list
+* @param (int): giá trị của node cần thêm
+*/
+void linked_list_add_node(linked_list* ll, int val);
+
+/**
+* @brief Đọc giá trị của 1 node trong linked list
+* @param (linked_list*): địa chỉ của linked list
+* @param (int): vị trí của node cần đọc giá trị
+* @return (int): giá trị của node tại vị trí index
+*/
+int linked_list_get_val(linked_list* ll, int index);
