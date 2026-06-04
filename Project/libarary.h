@@ -179,3 +179,23 @@ void linked_list_add_node(linked_list* ll, int val);
 * @return (int): giá trị của node tại vị trí index
 */
 int linked_list_get_val(linked_list* ll, int index);
+
+/**
+* @brief Hàm show all node trong linked list
+* @param (linked_list*): địa chỉ của linked list
+*/
+void linked_list_show_all_node(linked_list* ll);
+
+/**
+* @brief Hàm xóa 1 node trong linked list
+* @param (linked_list*): địa chỉ của linked list
+* @param (int): vị trí của node cần xóa
+*/
+void linked_list_remove_node(linked_list* ll, int index);
+
+/**
+* @brief Hàm insert 1 node vào linked list tại ví trí bất kì
+* @param (linked_list*): địa chỉ của linked list
+* @param (int): vị trí của node cần insert
+*/
+void linked_list_insert_node(linked_list* ll, int index, int val);

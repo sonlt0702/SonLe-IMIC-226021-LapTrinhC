@@ -177,3 +177,56 @@ int linked_list_get_val(linked_list* ll, int index)
 	}
 	return temp->value;
 }
+
+void linked_list_show_all_node(linked_list* ll)
+{
+	node* temp = ll->root_node;
+	for (int i = 0; i < ll->size - 1; i++)
+	{
+		printf("gia tri cua node tai vi tri %d: %d\n", i, temp->value);
+		temp = (node*)(temp->next_node);
+	}
+	printf("gia tri cua node tai vi tri %d: %d\n", ll->size - 1, temp->value);
+}
+
+void linked_list_remove_node(linked_list* ll, int index)
+{
+	node* temp = ll->root_node;
+	node* preTemp = temp;
+	if (index == 0)
+		ll->root_node = temp->next_node;
+	for (int i = 0; i < index; i++)
+	{
+		preTemp = temp;
+		temp = (node*)(temp->next_node);
+	}
+	preTemp->next_node = temp->next_node;
+	ll->size--;
+	free(temp);
+}
+
+void linked_list_insert_node(linked_list* ll, int index, int val)
+{
+	node* n = malloc(sizeof(node));
+	n->value = val;
+	n->next_node = NULL;
+
+	node* temp = ll->root_node;
+	node* preTemp = temp;
+	if (index == 0)
+	{
+		ll->root_node = n;
+		n->next_node = temp;
+	}
+	else
+	{
+		for (int i = 0; i < index; i++)
+		{
+			preTemp = temp;
+			temp = (node*)(temp->next_node);
+		}
+		preTemp->next_node = n;
+		n->next_node = temp;
+	}
+	ll->size++;
+}
