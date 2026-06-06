@@ -28,5 +28,9 @@ void main() {
 	//buoi6_bai_2();
 	//buoi6_bai_3();
 	//buoi6_bai_4();
-	buoi7_bai_1();
+	//buoi7_bai_1();
+	//buoi8_bai_1();
+	//buoi8_bai_2();
+	//buoi8_bai_3();
+	buoi8_bai_4();
 }

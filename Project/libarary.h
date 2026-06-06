@@ -26,6 +26,10 @@ void buoi6_bai_2();
 void buoi6_bai_3();
 void buoi6_bai_4();
 void buoi7_bai_1();
+void buoi8_bai_1();
+void buoi8_bai_2();
+void buoi8_bai_3();
+void buoi8_bai_4();
 
 /**
 * @brief Cộng 2 số nguyên
@@ -123,13 +127,32 @@ phan_so tich_phan_so(phan_so A, phan_so B);
 */
 int tim_max_phan_so(phan_so* arr, int n);
 
+typedef enum
+{
+	NAM,
+	NU
+} gt;
+
+typedef enum
+{
+	GIOI,
+	KHA,
+	TRUNG_BINH,
+	YEU
+} loai;
+
+
+
 /**
 * @brief kiểu dữ liệu học sinh
 */
 typedef struct {
 	char* ten;
+	int tuoi;
+	gt gioi_tinh; // 0: nam, 1: nu
 	float diem_toan;
 	float diem_van;
+	loai loai; // 0:giỏi, 1: khá, 2: trung bình, 3: yếu
 } hoc_sinh;
 
 /**
@@ -199,3 +222,41 @@ void linked_list_remove_node(linked_list* ll, int index);
 * @param (int): vị trí của node cần insert
 */
 void linked_list_insert_node(linked_list* ll, int index, int val);
+
+// cấp phát vùng nhớ tránh lãng phí
+#pragma pack(push)
+#pragma pack(1)
+typedef struct
+{
+	char x;
+	int y;
+} test;
+#pragma pack(pop)
+
+typedef struct
+{
+	char x;
+	int y;
+} test2;
+
+typedef union
+{
+	unsigned short gia_tri;
+	unsigned char arr[2];
+} union_t;
+
+typedef union
+{
+	unsigned char value;
+	struct
+	{
+		char _O : 1;
+		char _1 : 1;
+		char _2 : 1;
+		char _3 : 1;
+		char _4 : 1;
+		char _5 : 1;
+		char _6 : 1;
+		char _7 : 1;
+	} BIT;
+} byte_t;
