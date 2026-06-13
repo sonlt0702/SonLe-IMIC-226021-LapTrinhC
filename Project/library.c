@@ -1,5 +1,6 @@
 #include "libarary.h"
 #include <stdio.h>
+#include <malloc.h>
 int cong_so_nguyen(int so_nguyen_1, int so_nguyen_2) {
 	return so_nguyen_1 + so_nguyen_2;
 }
@@ -54,27 +55,28 @@ char* str_findChar(char* str, char k)
 
 char* str_concat(char* str1, char* str2)
 {
-	char str[1000] = "";
-	char* ptr = str1;
-	int currentStr = 1;
-	int i = 0;
-	while (i < 1000) {
-		if (*ptr == 0) {
-			if (currentStr == 1) {
-				ptr = str2;
-				currentStr++;
-			}
-			else {
-				str[i] = 0;
-				break;
-			}
-			
-		}
-		str[i] = *ptr;
-		i++;
-		ptr++;
-	}
-	return str;
+	int len1 = 0, len2 = 0;
+
+	while (str1[len1]) len1++;
+	while (str2[len2]) len2++;
+
+	char* result = calloc(len1 + len2 + 1, sizeof(char));
+	if (result == NULL)
+		return NULL;
+
+	char* p = result;
+
+	while (*str1)
+		*p++ = *str1++;
+
+	while (*str2)
+		*p++ = *str2++;
+
+	*p = '\0';
+
+	//free(str1);
+
+	return result;
 }
 
 int str_findStr(char* str1, char* str2)

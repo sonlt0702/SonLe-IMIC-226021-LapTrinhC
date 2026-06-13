@@ -31,6 +31,7 @@ void buoi8_bai_2();
 void buoi8_bai_3();
 void buoi8_bai_4();
 void buoi8_bai_5();
+void function1();
 
 /**
 * @brief Cộng 2 số nguyên

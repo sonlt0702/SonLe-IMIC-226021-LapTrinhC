@@ -135,6 +135,7 @@
     <ClCompile Include="buoi6.c" />
     <ClCompile Include="buoi7.c" />
     <ClCompile Include="buoi8.c" />
+    <ClCompile Include="buoi9.c" />
     <ClCompile Include="library.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>

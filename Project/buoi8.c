@@ -3,7 +3,7 @@
 #include <math.h>
 #include "libarary.h"
 #include <malloc.h>
-
+#include <stdlib.h>
 void buoi8_bai_1() {
 
 	char* convert_gt[] = { "NAM", "NU" };
@@ -72,56 +72,6 @@ void buoi8_bai_4() {
 	printf("c: %c (%d) \n", c, c);
 	c = fgetc(pf);
 	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
-	c = fgetc(pf);
-	printf("c: %c (%d) \n", c, c);
 
 
 
@@ -176,17 +126,23 @@ void buoi8_bai_5() {
 	int index = 0;
 	while (c1 != -1) {
 		if (c1 == '\n') {
-			//hoc_sinh_t hocsinh = {
-			//	.ten = ten,
-			//	.tuoi = (int) *tuoi, 
-			//	.diem_toan = (float) *diemtoan, 
-			//	.diem_van = (float) *diemvan
-			//};
+			//if (index == 0)
+			//{
+			//	index++;
+			//	c1 = fgetc(pf1);
+			//	continue;
+			//}
+			hoc_sinh_t hocsinh = {
+				.ten = ten,
+				.tuoi = atoi(tuoi), 
+				.diem_toan = atof(diemtoan), 
+				.diem_van = atof(diemvan)
+			};
 
-			//ds_hocsinh[index] = hocsinh;
+			ds_hocsinh[index] = hocsinh;
 
-			printf("ten: %s, tuoi: %s, diem toan: %s, diem van: %s \n",
-					ten, tuoi, diemtoan, diemvan);
+			//printf("ten: %s, tuoi: %s, diem toan: %s, diem van: %s \n",
+			//		ten, tuoi, diemtoan, diemvan);
 
 			ten = "";
 			tuoi = "";
@@ -236,10 +192,10 @@ void buoi8_bai_5() {
 	// close file
 	fclose(pf1);
 
-	//int vitri_hs_gioi_nhat = tim_hoc_sinh_gioi_nhat(ds_hocsinh, sizeof(ds_hocsinh) / sizeof(ds_hocsinh[0]));
-	//hoc_sinh_t hs_gioi_nhat = ds_hocsinh[vitri_hs_gioi_nhat];
-	//printf("ten: %s, tuoi: %d, diem toan: %.1f, diem van: %.1f",
-	//	hs_gioi_nhat.ten, hs_gioi_nhat.tuoi, hs_gioi_nhat.diem_toan, hs_gioi_nhat.diem_van);
+	int vitri_hs_gioi_nhat = tim_hoc_sinh_gioi_nhat(ds_hocsinh, sizeof(ds_hocsinh) / sizeof(ds_hocsinh[0]));
+	hoc_sinh_t hs_gioi_nhat = ds_hocsinh[vitri_hs_gioi_nhat];
+	printf("ten: %s, tuoi: %d, diem toan: %.1f, diem van: %.1f",
+		hs_gioi_nhat.ten, hs_gioi_nhat.tuoi, hs_gioi_nhat.diem_toan, hs_gioi_nhat.diem_van);
 
 
 	free(ds_hocsinh);
