@@ -30,6 +30,7 @@ void buoi8_bai_1();
 void buoi8_bai_2();
 void buoi8_bai_3();
 void buoi8_bai_4();
+void buoi8_bai_5();
 
 /**
 * @brief Cộng 2 số nguyên
@@ -260,3 +261,22 @@ typedef union
 		char _7 : 1;
 	} BIT;
 } byte_t;
+
+/**
+* @brief kiểu dữ liệu học sinh
+*/
+typedef struct {
+	char* ten;
+	int tuoi;
+	float diem_toan;
+	float diem_van;
+} hoc_sinh_t;
+
+/**
+* @brief tìm học sinh có điểm trung bình (toán+văn)/2 cao nhất
+* @param (hoc_sinh*): địa chỉ bắt đầu của mảng hoc_sinh
+* @param (int): số lượng phần tử
+* @return (int): vị trí của học sinh lớn nhất
+*
+*/
+int tim_hoc_sinh_t_gioi_nhat(hoc_sinh_t* arr, int n);

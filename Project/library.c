@@ -140,6 +140,20 @@ int tim_hoc_sinh_gioi_nhat(hoc_sinh* arr, int n)
 	}
 	return vi_tri_max;
 }
+int tim_hoc_sinh_t_gioi_nhat(hoc_sinh_t* arr, int n)
+{
+	float diem_max = 0;
+	int vi_tri_max = 0;
+	for (int i = 0; i < n; i++)
+	{
+		float diem_tb = (arr[i].diem_toan + arr[i].diem_van) / 2;
+		if (diem_tb > diem_max) {
+			diem_max = diem_tb;
+			vi_tri_max = i;
+		}
+	}
+	return vi_tri_max;
+}
 
 void linked_list_init(linked_list* ll)
 {
